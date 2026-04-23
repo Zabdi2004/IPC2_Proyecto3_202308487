@@ -1,24 +1,39 @@
-using Backend.Repositories;
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<Backend.Repositories.Repositorio>();
 
+// Scoped: una instancia nueva por cada petición HTTP
+builder.Services.AddScoped<Backend.Services.ConfigService>();
+builder.Services.AddScoped<Backend.Services.TransaccionService>();
+builder.Services.AddScoped<Backend.Services.ConsultaService>();
+
+// CORS: permite que React (localhost:5173) se comunique con el Backend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+
+// CORS debe ir antes de MapControllers
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

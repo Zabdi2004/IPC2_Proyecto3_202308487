@@ -5,11 +5,11 @@ using System.Xml.Linq;
 
 namespace Backend.Services
 {
-    public class ConfiguracionService
+    public class ConfigService
     {
         private readonly Repositorio _repositorio;
 
-        public ConfiguracionService(Repositorio repositorio)
+        public ConfigService(Repositorio repositorio)
         {
             _repositorio = repositorio;
         }

@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\services\\configuracionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\services\\configuracionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\repositories\\repositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\repositories\\repositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,51 +27,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConfiguracionService.cs",
-              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\ConfiguracionService.cs",
-              "RelativeDocumentMoniker": "Backend\\Services\\ConfiguracionService.cs",
-              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\ConfiguracionService.cs",
-              "RelativeToolTip": "Backend\\Services\\ConfiguracionService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAuwAYAAAAFAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T05:31:36.513Z",
+              "WhenOpened": "2026-04-23T20:58:45.126Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Repositorio.cs",
-              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Repositories\\Repositorio.cs",
-              "RelativeDocumentMoniker": "Backend\\Repositories\\Repositorio.cs",
-              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Repositories\\Repositorio.cs",
-              "RelativeToolTip": "Backend\\Repositories\\Repositorio.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAswA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T04:56:12.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Backend.csproj",
-              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Backend.csproj",
-              "RelativeDocumentMoniker": "Backend\\Backend.csproj",
-              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Backend.csproj",
-              "RelativeToolTip": "Backend\\Backend.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-19T04:55:28.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Pago.cs",
-              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Models\\Pago.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\Pago.cs",
-              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Models\\Pago.cs",
-              "RelativeToolTip": "Backend\\Models\\Pago.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T04:46:10.889Z"
             }
           ]
         }
