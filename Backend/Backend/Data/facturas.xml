@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<facturas>
+  <factura>
+    <numeroFactura>FAC001</numeroFactura>
+    <NITCliente>A1B2C3</NITCliente>
+    <fecha>2026-04-01</fecha>
+    <valor>1500</valor>
+    <saldoPendiente>0</saldoPendiente>
+    <pagada>true</pagada>
+  </factura>
+  <factura>
+    <numeroFactura>FAC002</numeroFactura>
+    <NITCliente>D4E5F6</NITCliente>
+    <fecha>2026-04-05</fecha>
+    <valor>2300</valor>
+    <saldoPendiente>0</saldoPendiente>
+    <pagada>true</pagada>
+  </factura>
+  <factura>
+    <numeroFactura>FAC003</numeroFactura>
+    <NITCliente>J1K2L3</NITCliente>
+    <fecha>2026-04-10</fecha>
+    <valor>875</valor>
+    <saldoPendiente>0</saldoPendiente>
+    <pagada>true</pagada>
+  </factura>
+  <factura>
+    <numeroFactura>FAC004</numeroFactura>
+    <NITCliente>M4N5O6</NITCliente>
+    <fecha>2026-04-15</fecha>
+    <valor>3200</valor>
+    <saldoPendiente>3200</saldoPendiente>
+    <pagada>false</pagada>
+  </factura>
+</facturas>

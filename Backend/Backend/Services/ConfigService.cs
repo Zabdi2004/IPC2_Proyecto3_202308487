@@ -111,6 +111,9 @@ namespace Backend.Services
                 respuestaXML.Save(writer);
             }
 
+            _repositorio.GuardarClientes();
+            _repositorio.GuardarBancos();
+
             return sb.ToString();
         }
     }

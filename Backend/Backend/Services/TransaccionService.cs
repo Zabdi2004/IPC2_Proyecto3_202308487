@@ -199,6 +199,11 @@ namespace Backend.Services
             // Concatenamos manualmente la declaración XML porque es la forma
             // más directa de garantizar que aparezca en el string final
             string declaracion = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+
+            _repositorio.GuardarFacturas();
+            _repositorio.GuardarPagos();
+            _repositorio.GuardarClientes();
+
             return declaracion + respuestaXML.ToString();
         }
     }

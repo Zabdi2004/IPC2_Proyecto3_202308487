@@ -19,11 +19,7 @@ namespace Backend.Controllers
         [HttpPost("limpiar")]
         public IActionResult Limpiar()
         {
-            _repositorio.Clientes.Clear();
-            _repositorio.Bancos.Clear();
-            _repositorio.Facturas.Clear();
-            _repositorio.Pagos.Clear();
-
+            _repositorio.LimpiarTodo();
             return Ok(new { mensaje = "Datos reseteados correctamente." });
         }
     }

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { sileo, Toaster } from "sileo";
 import { FaCalendarAlt } from 'react-icons/fa';
-import url from '../../Api/url';
+import url from '../../Api/url'; 
+import { useRef } from 'react';
 
 import {
     Chart as ChartJS,
@@ -23,6 +24,39 @@ const Graficas = () => {
     const [anio, setAnio] = useState(fechaActual.getFullYear());
     const [chartData, setChartData] = useState(null);
     const [loading, setLoading] = useState(false);
+    // Ref para capturar el área de la gráfica
+    const pdfRef = useRef(null);
+
+    // Abre ventana de impresión con la gráfica visible
+    const handleDescargarPDF = () => {
+        const canvas = pdfRef.current?.querySelector('canvas');
+        if (!canvas) return;
+
+        // Convertimos el canvas de la gráfica a imagen base64
+        const imagenGrafica = canvas.toDataURL('image/png');
+
+        const ventana = window.open('', '_blank');
+        ventana.document.write(`
+            <html>
+                <head>
+                    <title>Ingresos por Banco</title>
+                    <style>
+                        body { font-family: 'Times New Roman', serif; padding: 20px; color: #546b57; }
+                        h2 { color: #546b57; border-bottom: 2px solid #81b68e; padding-bottom: 10px; }
+                        img { width: 100%; max-width: 800px; display: block; margin: 0 auto; }
+                        p { color: #546b57; }
+                    </style>
+                </head>
+                <body>
+                    <h2>Ingresos por Banco</h2>
+                    <p>Período de referencia: ${new Date(0, mes - 1).toLocaleString('es-GT', {month: 'long'})} ${anio}</p>
+                    <img src="${imagenGrafica}" alt="Grafica de ingresos" />
+                </body>
+            </html>
+        `);
+        ventana.document.close();
+        ventana.print();
+    };
 
     // Paleta de colores vintage para las barras de cada banco
     const coloresBancos = [
@@ -169,8 +203,23 @@ const Graficas = () => {
                     </div>
                 </div>
 
+                {/* Botón de descarga PDF, solo visible cuando hay datos */}
+                {chartData && (
+                    <div className="flex justify-end mb-3">
+                        <button
+                            onClick={handleDescargarPDF}
+                            className="flex items-center gap-2 px-4 py-2 rounded-md text-white font-medium transition-colors"
+                            style={{backgroundColor: '#546b57'}}
+                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#69ad7c'}
+                            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#546b57'}
+                        >
+                            📄 Descargar PDF
+                        </button>
+                    </div>
+                )}
+
                 {/* Contenedor de la gráfica */}
-                <div className="bg-white p-6 rounded-lg shadow-md border min-h-[400px] flex items-center justify-center" style={{borderColor: '#81b68e'}}>
+                <div ref={pdfRef} className="bg-white p-6 rounded-lg shadow-md border min-h-[400px] flex items-center justify-center" style={{borderColor: '#81b68e'}}>
                     {loading ? (
                         <p className="text-xl font-bold animate-pulse" style={{color: '#81b68e'}}>Cargando gráfica...</p>
                     ) : chartData ? (

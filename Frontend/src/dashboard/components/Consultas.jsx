@@ -3,6 +3,8 @@ import axios from 'axios';
 import { FaSearch, FaUserTie, FaMoneyBillWave, FaListAlt, FaUsers } from 'react-icons/fa';
 import { sileo, Toaster } from "sileo";
 import url from '../../Api/url';
+import { useRef } from 'react';
+import html2pdf from 'html2pdf.js';
 
 const Consultas = () => {
     const [clientes, setClientes] = useState([]);
@@ -10,6 +12,40 @@ const Consultas = () => {
     const [loadingClientes, setLoadingClientes] = useState(true);
     const [clienteData, setClienteData] = useState(null);
     const [loadingDetalle, setLoadingDetalle] = useState(false);
+
+    // Ref para capturar el área del estado de cuenta
+    const pdfRef = useRef(null);
+
+    // Genera y descarga el PDF del estado de cuenta visible
+    const handleDescargarPDF = () => {
+        const elemento = pdfRef.current;
+        if (!elemento) return;
+
+        // Creamos una ventana nueva solo con el contenido del estado de cuenta
+        const ventana = window.open('', '_blank');
+        ventana.document.write(`
+            <html>
+                <head>
+                    <title>Estado de Cuenta - ${selectedNit}</title>
+                    <style>
+                        body { font-family: 'Times New Roman', serif; padding: 20px; color: #546b57; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                        th { background-color: #f0f7f2; padding: 10px; text-align: left; border: 1px solid #c8e1cd; }
+                        td { padding: 10px; border: 1px solid #c8e1cd; }
+                        .cargo { color: #dc2626; }
+                        .abono { color: #16a34a; }
+                        h2 { color: #546b57; border-bottom: 2px solid #81b68e; padding-bottom: 10px; }
+                        .saldo { background-color: #f0f7f2; padding: 10px; border-radius: 5px; display: inline-block; margin-top: 10px; }
+                    </style>
+                </head>
+                <body>
+                    ${elemento.innerHTML}
+                </body>
+            </html>
+        `);
+        ventana.document.close();
+        ventana.print();
+    };
 
     // Carga la lista de clientes al montar el componente
     useEffect(() => {
@@ -177,62 +213,78 @@ const Consultas = () => {
 
                         {/* Resultados del estado de cuenta */}
                         {clienteData && (
-                            <div className="bg-white p-6 rounded-lg shadow-md border" style={{borderColor: '#81b68e'}}>
-
-                                {/* Cabecera con nombre y saldo */}
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-4 border-b gap-4" style={{borderColor: '#c8e1cd'}}>
-                                    <div>
-                                        <h3 className="text-2xl font-bold flex items-center gap-2" style={{color: '#546b57'}}>
-                                            <FaUserTie style={{color: '#81b68e'}} />
-                                            {clienteData.cliente}
-                                        </h3>
-                                    </div>
-                                    <div className="px-4 py-2 rounded-md border flex items-center gap-3" style={{backgroundColor: '#f0f7f2', borderColor: '#c8e1cd'}}>
-                                        <FaMoneyBillWave className="text-green-600 text-xl" />
-                                        <div>
-                                            <p className="text-xs uppercase font-semibold" style={{color: '#81b68e'}}>Saldo Actual</p>
-                                            <p className="text-xl font-bold" style={{color: '#546b57'}}>{clienteData.saldoActual}</p>
-                                        </div>
-                                    </div>
+                            <div>
+                                {/* Botón de descarga PDF */}
+                                <div className="flex justify-end mb-3">
+                                    <button
+                                        onClick={handleDescargarPDF}
+                                        className="flex items-center gap-2 px-4 py-2 rounded-md text-white font-medium transition-colors"
+                                        style={{backgroundColor: '#546b57'}}
+                                        onMouseEnter={e => e.currentTarget.style.backgroundColor = '#69ad7c'}
+                                        onMouseLeave={e => e.currentTarget.style.backgroundColor = '#546b57'}
+                                    >
+                                        📄 Descargar PDF
+                                    </button>
                                 </div>
 
-                                {/* Tabla de transacciones */}
-                                <div>
-                                    <h4 className="text-lg font-bold mb-4 flex items-center gap-2" style={{color: '#546b57'}}>
-                                        <FaListAlt style={{color: '#81b68e'}} />
-                                        Historial de Transacciones
-                                    </h4>
+                                {/* Área que se exportará al PDF */}
+                                <div ref={pdfRef} className="bg-white p-6 rounded-lg shadow-md border" style={{borderColor: '#81b68e'}}>
 
-                                    <div className="overflow-x-auto border rounded-md" style={{borderColor: '#c8e1cd'}}>
-                                        <table className="min-w-full divide-y" style={{borderColor: '#c8e1cd'}}>
-                                            <thead style={{backgroundColor: '#f0f7f2'}}>
-                                                <tr>
-                                                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Fecha</th>
-                                                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Cargo</th>
-                                                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Abono</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody className="bg-white divide-y" style={{borderColor: '#c8e1cd'}}>
-                                                {clienteData.transacciones && clienteData.transacciones.length > 0 ? (
-                                                    clienteData.transacciones.map((tx, index) => (
-                                                        <tr key={index} className="transition-colors" style={{}} 
-                                                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#f9fdf9'}
-                                                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'white'}
-                                                        >
-                                                            <td className="px-6 py-4 whitespace-nowrap text-sm" style={{color: '#546b57'}}>{tx.fecha}</td>
-                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600">{tx.cargo || "-"}</td>
-                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">{tx.abono || "-"}</td>
-                                                        </tr>
-                                                    ))
-                                                ) : (
+                                    {/* Cabecera con nombre y saldo */}
+                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-4 border-b gap-4" style={{borderColor: '#c8e1cd'}}>
+                                        <div>
+                                            <h3 className="text-2xl font-bold flex items-center gap-2" style={{color: '#546b57'}}>
+                                                <FaUserTie style={{color: '#81b68e'}} />
+                                                {clienteData.cliente}
+                                            </h3>
+                                        </div>
+                                        <div className="px-4 py-2 rounded-md border flex items-center gap-3" style={{backgroundColor: '#f0f7f2', borderColor: '#c8e1cd'}}>
+                                            <FaMoneyBillWave className="text-green-600 text-xl" />
+                                            <div>
+                                                <p className="text-xs uppercase font-semibold" style={{color: '#81b68e'}}>Saldo Actual</p>
+                                                <p className="text-xl font-bold" style={{color: '#546b57'}}>{clienteData.saldoActual}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Tabla de transacciones */}
+                                    <div>
+                                        <h4 className="text-lg font-bold mb-4 flex items-center gap-2" style={{color: '#546b57'}}>
+                                            <FaListAlt style={{color: '#81b68e'}} />
+                                            Historial de Transacciones
+                                        </h4>
+
+                                        <div className="overflow-x-auto border rounded-md" style={{borderColor: '#c8e1cd'}}>
+                                            <table className="min-w-full divide-y" style={{borderColor: '#c8e1cd'}}>
+                                                <thead style={{backgroundColor: '#f0f7f2'}}>
                                                     <tr>
-                                                        <td colSpan="3" className="px-6 py-8 text-center" style={{color: '#81b68e'}}>
-                                                            No hay transacciones registradas para este cliente.
-                                                        </td>
+                                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Fecha</th>
+                                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Cargo</th>
+                                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{color: '#546b57'}}>Abono</th>
                                                     </tr>
-                                                )}
-                                            </tbody>
-                                        </table>
+                                                </thead>
+                                                <tbody className="bg-white divide-y" style={{borderColor: '#c8e1cd'}}>
+                                                    {clienteData.transacciones && clienteData.transacciones.length > 0 ? (
+                                                        clienteData.transacciones.map((tx, index) => (
+                                                            <tr key={index} className="transition-colors"
+                                                                onMouseEnter={e => e.currentTarget.style.backgroundColor = '#f9fdf9'}
+                                                                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'white'}
+                                                            >
+                                                                <td className="px-6 py-4 whitespace-nowrap text-sm" style={{color: '#546b57'}}>{tx.fecha}</td>
+                                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600">{tx.cargo || "-"}</td>
+                                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">{tx.abono || "-"}</td>
+                                                            </tr>
+                                                        ))
+                                                    ) : (
+                                                        <tr>
+                                                            <td colSpan="3" className="px-6 py-8 text-center" style={{color: '#81b68e'}}>
+                                                                No hay transacciones registradas para este cliente.
+                                                            </td>
+                                                        </tr>
+                                                    )}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

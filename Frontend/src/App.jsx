@@ -4,6 +4,7 @@ import CargaConfig from "./dashboard/components/CargaConfig";
 import CargaTransacciones from "./dashboard/components/CargaTransacciones";
 import Consultas from "./dashboard/components/Consultas";
 import Graficas from "./dashboard/components/Graficas";
+import Ayuda from "./dashboard/components/Ayuda";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="CargarTransacciones" element={<CargaTransacciones />} />
           <Route path="Consultas" element={<Consultas />} />
           <Route path="Graficas" element={<Graficas />} />
+          <Route path="Ayuda" element={<Ayuda />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clientes>
+  <cliente>
+    <NIT>A1B2C3</NIT>
+    <nombre>Almacén Guatemalteco</nombre>
+    <saldoAFavor>0</saldoAFavor>
+  </cliente>
+  <cliente>
+    <NIT>D4E5F6</NIT>
+    <nombre>Ferretería El Progreso</nombre>
+    <saldoAFavor>0</saldoAFavor>
+  </cliente>
+  <cliente>
+    <NIT>G7H8I9</NIT>
+    <nombre>Almacén Guatemalteco</nombre>
+    <saldoAFavor>0</saldoAFavor>
+  </cliente>
+  <cliente>
+    <NIT>J1K2L3</NIT>
+    <nombre>Librería Central</nombre>
+    <saldoAFavor>0</saldoAFavor>
+  </cliente>
+  <cliente>
+    <NIT>M4N5O6</NIT>
+    <nombre>Farmacia San José</nombre>
+    <saldoAFavor>0</saldoAFavor>
+  </cliente>
+</clientes>

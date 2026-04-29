@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\controllers\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\services\\transaccionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\services\\transaccionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\services\\configservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\services\\configservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\repositories\\repositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\repositories\\repositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|c:\\users\\zabdi\\desktop\\ipc2_proyecto3_202308487\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,15 +43,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ResetController.cs",
+              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Controllers\\ResetController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\ResetController.cs",
+              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Controllers\\ResetController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\ResetController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T04:12:22.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransaccionService.cs",
+              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\TransaccionService.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\TransaccionService.cs",
+              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\TransaccionService.cs",
+              "RelativeToolTip": "Backend\\Services\\TransaccionService.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAowMwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T04:11:57.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConfigService.cs",
+              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\ConfigService.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ConfigService.cs",
+              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Services\\ConfigService.cs",
+              "RelativeToolTip": "Backend\\Services\\ConfigService.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAowH8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T04:11:29.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Repositorio.cs",
+              "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Repositories\\Repositorio.cs",
+              "RelativeDocumentMoniker": "Backend\\Repositories\\Repositorio.cs",
+              "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Repositories\\Repositorio.cs",
+              "RelativeToolTip": "Backend\\Repositories\\Repositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T04:09:06.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
               "ToolTip": "C:\\Users\\zabdi\\Desktop\\IPC2_Proyecto3_202308487\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T20:58:45.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T20:58:45.126Z"
             }
           ]
         }

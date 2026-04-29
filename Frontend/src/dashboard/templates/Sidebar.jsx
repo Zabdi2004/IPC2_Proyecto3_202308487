@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import F1 from '/F1.jpg';
-import { FaCog, FaExchangeAlt, FaSearch, FaChartBar, FaTrash } from "react-icons/fa";
+import { FaCog, FaExchangeAlt, FaSearch, FaChartBar, FaTrash, FaQuestionCircle } from "react-icons/fa";
 import axios from 'axios';
 import { sileo } from 'sileo';
 import url from '../../Api/url';
+
 
 const Sidebar = () => {
     const SIDEBAR_LINKS = [
@@ -11,6 +12,8 @@ const Sidebar = () => {
         { id: 2, path: '/CargarTransacciones', name: 'Transacciones', icon: FaExchangeAlt },
         { id: 3, path: '/Consultas',           name: 'Consultas',     icon: FaSearch },
         { id: 4, path: '/Graficas',            name: 'Gráficas',      icon: FaChartBar },
+        { id: 5, path: '/Ayuda', name: 'Ayuda', icon: FaQuestionCircle },
+
     ];
 
     // Llama al endpoint de reset y notifica al usuario
